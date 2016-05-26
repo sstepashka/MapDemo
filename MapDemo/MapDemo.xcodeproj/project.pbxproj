@@ -15,6 +15,8 @@
 		584959151CF6C773000D86BC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584959141CF6C773000D86BC /* MapViewController.swift */; };
 		584959171CF6D002000D86BC /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 584959161CF6D002000D86BC /* points.json */; };
 		584959191CF6E2E8000D86BC /* PointDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584959181CF6E2E8000D86BC /* PointDetailViewController.swift */; };
+		5849591B1CF6F585000D86BC /* PointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849591A1CF6F585000D86BC /* PointsListViewController.swift */; };
+		5849591D1CF6F885000D86BC /* SearchPointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		584959141CF6C773000D86BC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		584959161CF6D002000D86BC /* points.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
 		584959181CF6E2E8000D86BC /* PointDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDetailViewController.swift; sourceTree = "<group>"; };
+		5849591A1CF6F585000D86BC /* PointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsListViewController.swift; sourceTree = "<group>"; };
+		5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPointsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				5849590C1CF6C623000D86BC /* Info.plist */,
 				584959141CF6C773000D86BC /* MapViewController.swift */,
 				584959181CF6E2E8000D86BC /* PointDetailViewController.swift */,
+				5849591A1CF6F585000D86BC /* PointsListViewController.swift */,
+				5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */,
 			);
 			path = MapDemo;
 			sourceTree = "<group>";
@@ -106,6 +112,7 @@
 				TargetAttributes = {
 					584958FC1CF6C623000D86BC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 44LEJK9728;
 					};
 				};
 			};
@@ -146,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5849591D1CF6F885000D86BC /* SearchPointsListViewController.swift in Sources */,
 				584959011CF6C623000D86BC /* AppDelegate.swift in Sources */,
 				584959191CF6E2E8000D86BC /* PointDetailViewController.swift in Sources */,
+				5849591B1CF6F585000D86BC /* PointsListViewController.swift in Sources */,
 				584959151CF6C773000D86BC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +270,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MapDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.speaktoit.MapDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -272,10 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MapDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.speaktoit.MapDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -298,6 +313,7 @@
 				584959111CF6C623000D86BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
