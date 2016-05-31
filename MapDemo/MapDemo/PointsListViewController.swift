@@ -22,7 +22,11 @@ extension ShowDetailPointType where Self: UIViewController {
 }
 
 class PointsListViewController: UITableViewController {
-    private let points = Point.loadFromFile("points")
+    var points = Point.loadFromFile("points") {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     private var searchPointsListViewController: SearchPointsListViewController!
     private var searchController: UISearchController!

@@ -54,7 +54,7 @@
                     <connections>
                         <outlet property="mapView" destination="Fcv-7C-J2d" id="IeM-Ol-r0G"/>
                         <segue destination="WN5-6g-GsV" kind="show" identifier="PointDetail" id="xKY-PB-gi3"/>
-                        <segue destination="D5z-WR-UoS" kind="show" identifier="ShowPointList" id="Ajf-g1-R7S"/>
+                        <segue destination="9Zt-35-5V8" kind="show" identifier="ShowPointList" id="nEo-aB-ivk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJx-lz-ylC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,8 +221,50 @@
             </objects>
             <point key="canvasLocation" x="1988" y="885"/>
         </scene>
+        <!--Объекты-->
+        <scene sceneID="1BS-tl-ved">
+            <objects>
+                <tableViewController id="9Zt-35-5V8" customClass="FilteredPointsListViewController" customModule="MapDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QGN-R4-Rxg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="q0B-yw-D2L" detailTextLabel="ZqE-2t-dbK" style="IBUITableViewCellStyleSubtitle" id="6op-K9-eGy">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6op-K9-eGy" id="YWn-8b-I5g">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q0B-yw-D2L">
+                                            <rect key="frame" x="15" y="6" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZqE-2t-dbK">
+                                            <rect key="frame" x="15" y="25.5" width="30.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Zt-35-5V8" id="hUj-I0-4pq"/>
+                            <outlet property="delegate" destination="9Zt-35-5V8" id="3h1-Jk-3Fr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Объекты" id="qnp-Qh-Bbe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNd-ub-HjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="-599"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ajf-g1-R7S"/>
-    </inferredMetricsTieBreakers>
 </document>

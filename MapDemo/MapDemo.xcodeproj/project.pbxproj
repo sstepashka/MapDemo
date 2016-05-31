@@ -18,6 +18,7 @@
 		5849591B1CF6F585000D86BC /* PointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849591A1CF6F585000D86BC /* PointsListViewController.swift */; };
 		5849591D1CF6F885000D86BC /* SearchPointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */; };
 		58F2CB021CFD60F900570E43 /* SelectAreaOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2CB011CFD60F900570E43 /* SelectAreaOverlay.swift */; };
+		58F2CB041CFD8EE400570E43 /* FilteredPointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2CB031CFD8EE400570E43 /* FilteredPointsListViewController.swift */; };
 		728FF5F4216C9C73D507EDAB /* Pods_MapDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FA490D3452FC751658030E /* Pods_MapDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		5849591A1CF6F585000D86BC /* PointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsListViewController.swift; sourceTree = "<group>"; };
 		5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPointsListViewController.swift; sourceTree = "<group>"; };
 		58F2CB011CFD60F900570E43 /* SelectAreaOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAreaOverlay.swift; sourceTree = "<group>"; };
+		58F2CB031CFD8EE400570E43 /* FilteredPointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredPointsListViewController.swift; sourceTree = "<group>"; };
 		7AF7023DB010234FC1A1B14E /* Pods-MapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C8FA490D3452FC751658030E /* Pods_MapDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				5849591A1CF6F585000D86BC /* PointsListViewController.swift */,
 				5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */,
 				58F2CB011CFD60F900570E43 /* SelectAreaOverlay.swift */,
+				58F2CB031CFD8EE400570E43 /* FilteredPointsListViewController.swift */,
 			);
 			path = MapDemo;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				584959191CF6E2E8000D86BC /* PointDetailViewController.swift in Sources */,
 				58F2CB021CFD60F900570E43 /* SelectAreaOverlay.swift in Sources */,
 				5849591B1CF6F585000D86BC /* PointsListViewController.swift in Sources */,
+				58F2CB041CFD8EE400570E43 /* FilteredPointsListViewController.swift in Sources */,
 				584959151CF6C773000D86BC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

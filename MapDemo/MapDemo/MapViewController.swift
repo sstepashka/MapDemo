@@ -143,9 +143,6 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func showListOfRegion(sender: AnyObject) {
-//        let center = mapSelectorManager.circleCoordinate
-//        let radius = mapSelectorManager.circleRadius
-        
         performSegueWithIdentifier("ShowPointList", sender: self)
     }
 }
@@ -197,6 +194,13 @@ extension MapViewController {
             let pointAnnotation = sender as! PointAnnotation
             
             pointDetailViewController.point = pointAnnotation.point
+        } else if segue.identifier == "ShowPointList" {
+            let center = mapSelectorManager.circleCoordinate
+            let radius = mapSelectorManager.circleRadius
+            
+            let filteredPointsListViewController = segue.destinationViewController as! FilteredPointsListViewController
+            filteredPointsListViewController.center = center
+            filteredPointsListViewController.radius = radius
         }
     }
 }
