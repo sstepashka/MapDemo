@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import DBMapSelectorViewController
 
 struct Point {
     let title: String
@@ -93,26 +94,95 @@ extension Point {
 class MapViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     let points = Point.loadFromFile("points")
+    var mapSelectorManager: DBMapSelectorManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapSelectorManager = DBMapSelectorManager(mapView: mapView)
+        mapSelectorManager.delegate = self
+        
+        mapSelectorManager.circleCoordinate = CLLocationCoordinate2DMake(54.857260, 83.107504)
+        mapSelectorManager.circleRadius = 1000
+        
+        mapSelectorManager.applySelectorSettings()
         
         mapView.addAnnotations(points.map({ $0.annotation() }))
         
         if let point = points.first {
             mapView.region = MKCoordinateRegion(center: point.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
         }
+        
+        navigationItem.rightBarButtonItems = [searchButton()]
+        
+        mapSelectorManager.hidden = true
+    }
+    
+    @IBAction func search(sender: AnyObject) {
+        mapSelectorManager.hidden = !mapSelectorManager.hidden
+        
+        if (mapSelectorManager.hidden) {
+            navigationItem.leftBarButtonItems = .None
+            navigationItem.rightBarButtonItems = [searchButton()]
+        } else {
+            navigationItem.leftBarButtonItems = [cancelButton()]
+            navigationItem.rightBarButtonItems = [doneButton()]
+        }
+    }
+    
+    private func searchButton() -> UIBarButtonItem {
+        return UIBarButtonItem(barButtonSystemItem: .Search, target: self, action: #selector(search))
+    }
+    
+    private func doneButton() -> UIBarButtonItem {
+        return UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(showListOfRegion))
+    }
+    
+    private func cancelButton() -> UIBarButtonItem {
+        return UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(search))
+    }
+    
+    @IBAction func showListOfRegion(sender: AnyObject) {
+//        let center = mapSelectorManager.circleCoordinate
+//        let radius = mapSelectorManager.circleRadius
+        
+        performSegueWithIdentifier("ShowPointList", sender: self)
+    }
+}
+
+extension MapViewController: DBMapSelectorManagerDelegate {
+    func mapSelectorManagerDidHandleUserInteraction(mapSelectorManager: DBMapSelectorManager!) {
+        
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        if annotation.isKindOfClass(PointAnnotation) {
+            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            
+            annotationView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+            annotationView.canShowCallout = true
+            
+            return annotationView
+        }
         
-        annotationView.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
-        annotationView.canShowCallout = true
-        
-        return annotationView
+        return mapSelectorManager.mapView(mapView, viewForAnnotation: annotation)
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, didChangeDragState newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        mapSelectorManager.mapView(mapView,
+                                   annotationView: view,
+                                   didChangeDragState: newState,
+                                   fromOldState: oldState)
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        return mapSelectorManager.mapView(mapView, rendererForOverlay: overlay)
+    }
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        mapSelectorManager.mapView(mapView, regionDidChangeAnimated: animated)
     }
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -122,9 +192,11 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let pointDetailViewController = segue.destinationViewController as! PointDetailViewController
-        let pointAnnotation = sender as! PointAnnotation
-        
-        pointDetailViewController.point = pointAnnotation.point
+        if segue.identifier == "PointDetail" {
+            let pointDetailViewController = segue.destinationViewController as! PointDetailViewController
+            let pointAnnotation = sender as! PointAnnotation
+            
+            pointDetailViewController.point = pointAnnotation.point
+        }
     }
 }

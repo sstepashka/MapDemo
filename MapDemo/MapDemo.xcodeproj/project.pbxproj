@@ -17,9 +17,12 @@
 		584959191CF6E2E8000D86BC /* PointDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584959181CF6E2E8000D86BC /* PointDetailViewController.swift */; };
 		5849591B1CF6F585000D86BC /* PointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849591A1CF6F585000D86BC /* PointsListViewController.swift */; };
 		5849591D1CF6F885000D86BC /* SearchPointsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */; };
+		58F2CB021CFD60F900570E43 /* SelectAreaOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2CB011CFD60F900570E43 /* SelectAreaOverlay.swift */; };
+		728FF5F4216C9C73D507EDAB /* Pods_MapDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8FA490D3452FC751658030E /* Pods_MapDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26F5B7C778BF4BFD95A27324 /* Pods-MapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		584958FD1CF6C623000D86BC /* MapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		584959001CF6C623000D86BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584959051CF6C623000D86BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +35,9 @@
 		584959181CF6E2E8000D86BC /* PointDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDetailViewController.swift; sourceTree = "<group>"; };
 		5849591A1CF6F585000D86BC /* PointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointsListViewController.swift; sourceTree = "<group>"; };
 		5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPointsListViewController.swift; sourceTree = "<group>"; };
+		58F2CB011CFD60F900570E43 /* SelectAreaOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAreaOverlay.swift; sourceTree = "<group>"; };
+		7AF7023DB010234FC1A1B14E /* Pods-MapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C8FA490D3452FC751658030E /* Pods_MapDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,18 +46,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				584959131CF6C62D000D86BC /* MapKit.framework in Frameworks */,
+				728FF5F4216C9C73D507EDAB /* Pods_MapDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20DD13122BD1F14ED29C4246 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26F5B7C778BF4BFD95A27324 /* Pods-MapDemo.debug.xcconfig */,
+				7AF7023DB010234FC1A1B14E /* Pods-MapDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		584958F41CF6C623000D86BC = {
 			isa = PBXGroup;
 			children = (
 				584959121CF6C62D000D86BC /* MapKit.framework */,
 				584958FF1CF6C623000D86BC /* MapDemo */,
 				584958FE1CF6C623000D86BC /* Products */,
+				20DD13122BD1F14ED29C4246 /* Pods */,
+				783C06FA1762EB6468C6B7DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,8 +94,17 @@
 				584959181CF6E2E8000D86BC /* PointDetailViewController.swift */,
 				5849591A1CF6F585000D86BC /* PointsListViewController.swift */,
 				5849591C1CF6F885000D86BC /* SearchPointsListViewController.swift */,
+				58F2CB011CFD60F900570E43 /* SelectAreaOverlay.swift */,
 			);
 			path = MapDemo;
+			sourceTree = "<group>";
+		};
+		783C06FA1762EB6468C6B7DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8FA490D3452FC751658030E /* Pods_MapDemo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5849590F1CF6C623000D86BC /* Build configuration list for PBXNativeTarget "MapDemo" */;
 			buildPhases = (
+				8A1EF5A1AA3EE245993FDA48 /* 📦 Check Pods Manifest.lock */,
 				584958F91CF6C623000D86BC /* Sources */,
 				584958FA1CF6C623000D86BC /* Frameworks */,
 				584958FB1CF6C623000D86BC /* Resources */,
+				7D84110E74FF44F4DE89DA41 /* 📦 Embed Pods Frameworks */,
+				9156F7164FA41BFB218636A8 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +178,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7D84110E74FF44F4DE89DA41 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1EF5A1AA3EE245993FDA48 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9156F7164FA41BFB218636A8 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		584958F91CF6C623000D86BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -156,6 +234,7 @@
 				5849591D1CF6F885000D86BC /* SearchPointsListViewController.swift in Sources */,
 				584959011CF6C623000D86BC /* AppDelegate.swift in Sources */,
 				584959191CF6E2E8000D86BC /* PointDetailViewController.swift in Sources */,
+				58F2CB021CFD60F900570E43 /* SelectAreaOverlay.swift in Sources */,
 				5849591B1CF6F585000D86BC /* PointsListViewController.swift in Sources */,
 				584959151CF6C773000D86BC /* MapViewController.swift in Sources */,
 			);
@@ -268,6 +347,7 @@
 		};
 		584959101CF6C623000D86BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26F5B7C778BF4BFD95A27324 /* Pods-MapDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -282,6 +362,7 @@
 		};
 		584959111CF6C623000D86BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AF7023DB010234FC1A1B14E /* Pods-MapDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

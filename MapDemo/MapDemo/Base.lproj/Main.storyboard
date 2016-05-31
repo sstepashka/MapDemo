@@ -54,6 +54,7 @@
                     <connections>
                         <outlet property="mapView" destination="Fcv-7C-J2d" id="IeM-Ol-r0G"/>
                         <segue destination="WN5-6g-GsV" kind="show" identifier="PointDetail" id="xKY-PB-gi3"/>
+                        <segue destination="D5z-WR-UoS" kind="show" identifier="ShowPointList" id="Ajf-g1-R7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJx-lz-ylC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,4 +222,7 @@
             <point key="canvasLocation" x="1988" y="885"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ajf-g1-R7S"/>
+    </inferredMetricsTieBreakers>
 </document>
