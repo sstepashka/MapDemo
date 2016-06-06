@@ -105,6 +105,8 @@ class MapViewController: UIViewController {
         mapSelectorManager.circleCoordinate = CLLocationCoordinate2DMake(54.857260, 83.107504)
         mapSelectorManager.circleRadius = 1000
         
+        mapSelectorManager.circleRadiusMax = 1000000
+        
         mapSelectorManager.applySelectorSettings()
         
         mapView.addAnnotations(points.map({ $0.annotation() }))
@@ -125,6 +127,13 @@ class MapViewController: UIViewController {
             navigationItem.leftBarButtonItems = .None
             navigationItem.rightBarButtonItems = [searchButton()]
         } else {
+            let coordinate = mapView.centerCoordinate
+            
+            mapSelectorManager.circleCoordinate = coordinate
+            mapSelectorManager.circleRadius = 1000
+            
+            mapSelectorManager.applySelectorSettings()
+            
             navigationItem.leftBarButtonItems = [cancelButton()]
             navigationItem.rightBarButtonItems = [doneButton()]
         }
